@@ -32,7 +32,7 @@ void setup() {
 }
 
 void loop() {
-  // Get NEMA data
+  // Get NMEA data
   float latitude;
   float longitude;
   unsigned long fix_age = 9999;

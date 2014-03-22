@@ -18,7 +18,7 @@ The GPS Tracker is composed of three main parts:
 
 * Akeru board. It's the same board than a plain UNO Rev 3 one, except it embeds a Sigfox modem and the connection to  computer is made through a micro-USB connector and an FTDI USB to serial chipset.
 * Battery shield. It's a mandatory part, but usefull if you don't want your pet to be plugged to the nearest electric outlet. It's made with a 3.7V lipo battery, and a Pololu 5V step-up/step-down voltage regulator (part number : S7V7F5). The output of the voltage regulator is connected to the 5V pin of the Akeru board, and the GND pin of the voltage regulator is connected to the GND pin of the Akeru board.
-* GPS module. This serial GPS module, based on the MTK3339 chipset, outputs NEMA frames through its serial pins. Its TX pin is connected to the RX pin of the Akeru card, its GND pin is connected to GND pin of the Akeru card, and its VCC pin is connected to the 3V3 pin of the Akeru. If your version of this module doesn't accepts 5V input, DO NOT connect its RX pin to Akeru's TX pin, excepts if you want to fry it.
+* GPS module. This serial GPS module, based on the MTK3339 chipset, outputs NMEA frames through its serial pins. Its TX pin is connected to the RX pin of the Akeru card, its GND pin is connected to GND pin of the Akeru card, and its VCC pin is connected to the 3V3 pin of the Akeru. If your version of this module doesn't accepts 5V input, DO NOT connect its RX pin to Akeru's TX pin, excepts if you want to fry it.
 
 Using your Arduino IDE, you just have to upload “hackerz_akeru.ino” to your Akeru board.
 
