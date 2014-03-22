@@ -1,3 +1,10 @@
+/*
+ * - GPS TX pin is plugged to Akeru pin 0
+ * - GPS VCC pin is plugged to Akeru pin 3V3
+ * - GPS GND pin is plugged to Akeru pin GND
+ */
+
+
 #include <SoftwareSerial.h>
 #include "TinyGPS.h"
 #include "Akeru.h"
