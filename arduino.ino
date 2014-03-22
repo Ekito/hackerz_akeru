@@ -8,34 +8,33 @@ struct coord {
   float longitude;
 };
 
+// Example NEMA frame
 char nema[] = "$GPRMC,194509.000,A,4042.6142,N,07400.4168,W,2.03,221.11,160412,,,A*77";
 
 void setup() {
-  // put your setup code here, to run once:
+  // LED 13 is used to "debug" sigfox operations
   pinMode(13, OUTPUT);
 
+  // Initialize sigfox modem
   akeru.begin();
   
+  // Start serial communication, because everyone needs to !
   Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  Serial.println("Begin");
-  
-  //coord coordinates = {43.256663, 1.199009};
-  
+  // Get coordinates from NEMA frames
   coord coordinates = extractCoordinates(nema);
   
+  // TODO : check for NULL/NULL coordinates
+  
+  // Send data to Sigfox network
   digitalWrite(13, HIGH);
   akeru.send(&coordinates, sizeof(coord));
   digitalWrite(13, LOW);
 
-  Serial.println("Before delay");
-
-  delay(30*1000);
-  
-  Serial.println("After delay");
+  // Wait for 10 minutes and 1 second
+  delay(10*60*1000 + 1);
 }
 
 
