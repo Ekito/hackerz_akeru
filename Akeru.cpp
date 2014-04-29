@@ -73,6 +73,8 @@ bool Akeru_::isReady() {
 bool Akeru_::send(const void* data, uint8_t len) {
 	uint8_t* bytes = (uint8_t*)data;
 
+    _serial.listen();
+
     if(!isReady()) {
         return false;
     }
